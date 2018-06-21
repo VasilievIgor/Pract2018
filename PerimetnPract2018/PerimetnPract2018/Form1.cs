@@ -46,5 +46,39 @@ namespace PerimetnPract2018
                 coordsTable[2, i].Value = rand.Next(0, 100);
             }
         }
+
+        private void calkBtn_Click(object sender, EventArgs e)
+        {
+            Point[] pts = GetPoints();
+            if(pts != null)
+            {
+                float per = PolygonClass.CalcPerimetr(pts);
+                perRes.Text = per.ToString("N2");
+                for (int i = 0; i < pts.Length; i++)
+                {
+                    lengthTable[1, i].Value = PolygonClass.CalcLength(pts[i], pts[(i + 1) % pts.Length]).ToString("N2");
+                }
+            }
+        }
+
+        public Point[] GetPoints()
+        {
+            try
+            {
+                Point[] pts = new Point[(int)number.Value];
+                for (int i = 0; i < (int)number.Value; i++)
+                {
+                    pts[i] = new Point();
+                    pts[i].x = float.Parse(coordsTable[1, i].Value.ToString());
+                    pts[i].y = float.Parse(coordsTable[2, i].Value.ToString());
+                }
+                return pts;
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message, "Error");
+                return null;
+            }
+        }
     }
 }

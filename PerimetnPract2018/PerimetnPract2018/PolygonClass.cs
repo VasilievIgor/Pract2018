@@ -8,8 +8,8 @@ namespace PerimetnPract2018
 {
     public struct Point
     {
-        public int x;
-        public int y;
+        public float x;
+        public float y;
     }
     class PolygonClass
     {
@@ -26,11 +26,10 @@ namespace PerimetnPract2018
                 return 0;
             }
             float res = 0;
-            for (int i = 1; i < points.Length; i++)
+            for (int i = 0; i < points.Length; i++)
             {
-                res += CalcLength(points[i], points[i - 1]);
+                res += CalcLength(points[i], points[(i + 1) % points.Length]);
             }
-            res += CalcLength(points[0], points[points.Length - 1]);
             return res;
         }
     }

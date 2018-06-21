@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.coordsTable = new System.Windows.Forms.DataGridView();
-            this.numCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lengthTable = new System.Windows.Forms.DataGridView();
             this.numLCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lengthCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +38,9 @@
             this.perRes = new System.Windows.Forms.TextBox();
             this.randomBtn = new System.Windows.Forms.Button();
             this.calkBtn = new System.Windows.Forms.Button();
+            this.numCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.coordsTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lengthTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.number)).BeginInit();
@@ -57,35 +57,10 @@
             this.yCol});
             this.coordsTable.Location = new System.Drawing.Point(12, 12);
             this.coordsTable.Name = "coordsTable";
-            this.coordsTable.ReadOnly = true;
             this.coordsTable.RowHeadersVisible = false;
             this.coordsTable.ShowEditingIcon = false;
             this.coordsTable.Size = new System.Drawing.Size(129, 323);
             this.coordsTable.TabIndex = 0;
-            // 
-            // numCol
-            // 
-            this.numCol.Frozen = true;
-            this.numCol.HeaderText = "N";
-            this.numCol.Name = "numCol";
-            this.numCol.ReadOnly = true;
-            this.numCol.Width = 25;
-            // 
-            // xCol
-            // 
-            this.xCol.Frozen = true;
-            this.xCol.HeaderText = "X";
-            this.xCol.Name = "xCol";
-            this.xCol.ReadOnly = true;
-            this.xCol.Width = 50;
-            // 
-            // yCol
-            // 
-            this.yCol.Frozen = true;
-            this.yCol.HeaderText = "Y";
-            this.yCol.Name = "yCol";
-            this.yCol.ReadOnly = true;
-            this.yCol.Width = 50;
             // 
             // lengthTable
             // 
@@ -186,6 +161,31 @@
             this.calkBtn.TabIndex = 7;
             this.calkBtn.Text = "Find perimetr";
             this.calkBtn.UseVisualStyleBackColor = true;
+            this.calkBtn.Click += new System.EventHandler(this.calkBtn_Click);
+            // 
+            // numCol
+            // 
+            this.numCol.Frozen = true;
+            this.numCol.HeaderText = "N";
+            this.numCol.Name = "numCol";
+            this.numCol.ReadOnly = true;
+            this.numCol.Width = 25;
+            // 
+            // xCol
+            // 
+            this.xCol.Frozen = true;
+            this.xCol.HeaderText = "X";
+            this.xCol.Name = "xCol";
+            this.xCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.xCol.Width = 50;
+            // 
+            // yCol
+            // 
+            this.yCol.Frozen = true;
+            this.yCol.HeaderText = "Y";
+            this.yCol.Name = "yCol";
+            this.yCol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.yCol.Width = 50;
             // 
             // MainForm
             // 
@@ -213,9 +213,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView coordsTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn xCol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn yCol;
         private System.Windows.Forms.DataGridView lengthTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn numLCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn lengthCol;
@@ -225,6 +222,9 @@
         private System.Windows.Forms.TextBox perRes;
         private System.Windows.Forms.Button randomBtn;
         private System.Windows.Forms.Button calkBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yCol;
     }
 }
 
