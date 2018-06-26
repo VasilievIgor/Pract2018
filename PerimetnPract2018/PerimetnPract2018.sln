@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerimetnPract2018", "PerimetnPract2018\PerimetnPract2018.csproj", "{76870FE9-CFCA-445A-9E43-5379A5B61C90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerimetnPract2018Tests", "PerimetnPract2018Tests\PerimetnPract2018Tests.csproj", "{40530C42-1E3E-4E04-94D9-E843C566FF05}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{76870FE9-CFCA-445A-9E43-5379A5B61C90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76870FE9-CFCA-445A-9E43-5379A5B61C90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76870FE9-CFCA-445A-9E43-5379A5B61C90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40530C42-1E3E-4E04-94D9-E843C566FF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40530C42-1E3E-4E04-94D9-E843C566FF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40530C42-1E3E-4E04-94D9-E843C566FF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40530C42-1E3E-4E04-94D9-E843C566FF05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

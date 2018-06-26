@@ -1,22 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PerimetnPract2018
+namespace PerimeterPract2018
 {
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
             GenerateTables();
         }
+        /// <summary>
+        /// Method to generate tables in datagrids
+        /// </summary>
         private void GenerateTables()
         {
             while ((int)number.Value < coordsTable.RowCount)
@@ -32,11 +31,20 @@ namespace PerimetnPract2018
                 lengthTable[0, lengthTable.RowCount - 1].Value = lengthTable.RowCount;
             }
         }
+        /// <summary>
+        /// ValueChanged event handler for numericUpDown
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void number_ValueChanged(object sender, EventArgs e)
         {
             GenerateTables();
         }
-
+        /// <summary>
+        /// Button for generatin random points
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void randomBtn_Click(object sender, EventArgs e)
         {
             Random rand = new Random();
@@ -46,26 +54,38 @@ namespace PerimetnPract2018
                 coordsTable[2, i].Value = rand.Next(0, 100);
             }
         }
-
+        /// <summary>
+        /// Button to calculate result
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void calkBtn_Click(object sender, EventArgs e)
         {
+            //Get array of points
             Point[] pts = GetPoints();
             if(pts != null)
             {
-                float per = PolygonClass.CalcPerimetr(pts);
+                //Calc perimetr
+                float per = PolygonClass.CalcPerimeter(pts);
+                //Show result in textBox
                 perRes.Text = per.ToString("N2");
+                //Calculate lengthes of all sides
                 for (int i = 0; i < pts.Length; i++)
                 {
                     lengthTable[1, i].Value = PolygonClass.CalcLength(pts[i], pts[(i + 1) % pts.Length]).ToString("N2");
                 }
             }
         }
-
+        /// <summary>
+        /// Method to get array of points from table
+        /// </summary>
+        /// <returns>Array of points</returns>
         public Point[] GetPoints()
         {
             try
             {
                 Point[] pts = new Point[(int)number.Value];
+                //Go through all points and parse the coordinates
                 for (int i = 0; i < (int)number.Value; i++)
                 {
                     pts[i] = new Point();
@@ -76,6 +96,7 @@ namespace PerimetnPract2018
             }
             catch(Exception e)
             {
+                //If there were error
                 MessageBox.Show(e.Message, "Error");
                 return null;
             }
